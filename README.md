@@ -1,28 +1,56 @@
-# AI-dynamic-ad-inserter
-This project, AI Dynamic Ad Inserter, is a computer vision tool designed to intelligently and automatically place advertisements onto flat surfaces within a video.
+# AI Dynamic Ad Inserter 🤖
 
-The system analyzes a video to identify suitable planes—such as walls, floors, or tabletops—and then realistically overlays a target advertisement image onto the chosen surface. It handles the complexities of perspective, ensuring the ad appears naturally integrated into the scene.
+A computer vision tool that intelligently identifies flat surfaces in videos and seamlessly overlays advertisements with correct perspective warping.
 
-Core Technologies
-This project leverages a modern stack of AI and computer vision libraries:
 
-Python: The primary programming language.
 
-OpenCV: Used for core video processing tasks like reading and writing frames.
+---
 
-PyTorch: The deep learning framework powering our AI models.
+## 📋 Project Description
 
-MiDaS: A state-of-the-art deep learning model for monocular depth estimation, allowing the program to "see" the 3D structure of the scene and identify surfaces.
+This project leverages state-of-the-art AI models to automate the process of placing advertisements into video content. The system analyzes video frames to find suitable planes (like walls, floors, or tables), generates a precise mask for the selected area, and then realistically integrates a target ad image, handling all necessary perspective transformations.
 
-Segment Anything Model (SAM): A powerful foundation model from Meta AI used to generate precise masks of the identified surfaces for seamless integration.
+---
 
-How It Works
-The workflow is a multi-stage pipeline:
+## ✨ Key Features
 
-Surface Identification: The system processes the input video frame by frame. The MiDaS model analyzes each frame to create a depth map, identifying potential flat surfaces suitable for ad placement.
+-   **Automatic Surface Detection**: Uses depth estimation to find potential flat surfaces for ad placement.
+-   **Precise Object Segmentation**: Employs the Segment Anything Model (SAM) to create accurate masks of target surfaces.
+-   **Perspective Correction**: Calculates and applies a homography transformation to warp the ad image, making it fit naturally into the scene's perspective.
+-   **Modular and Scalable**: Built with a clean project structure that separates concerns for easy maintenance and future development.
 
-Precise Segmentation: Once a surface is targeted, the Segment Anything Model (SAM) is used to generate an exact pixel-level mask of that area.
+---
 
-Perspective Transformation: The system calculates the corner points of the segmented surface to understand its perspective relative to the camera. It then applies a perspective warp to the advertisement image, distorting it to perfectly match the angle and orientation of the surface in the video.
+## 🛠️ Tech Stack
 
-Seamless Integration: Finally, the warped advertisement is overlaid onto the video frame using the mask from SAM, resulting in a final video where the ad appears to be a natural part of the original environment.
+-   **Python 3.10**: The core programming language.
+-   **OpenCV**: For fundamental video I/O and image processing tasks.
+-   **PyTorch**: The deep learning framework for running the AI models.
+-   **MiDaS**: A state-of-the-art model for monocular depth estimation.
+-   **Segment Anything Model (SAM)**: A powerful foundation model from Meta AI for high-quality object segmentation.
+-   **Conda**: For robust and reproducible environment management.
+-   **Git**: For version control.
+
+---
+
+## 🚀 Setup and Installation
+
+Follow these steps to set up the project environment.
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/jayanthk82/AI-dynamic-ad-inserter.git](https://github.com/jayanthk82/AI-dynamic-ad-inserter.git)
+cd AI-dynamic-ad-inserter
+
+
+
+📂 Project Structure
+The project follows a standardized structure to ensure maintainability.
+
+├── data/             # Input and Output video/image files
+├── models/           # Downloaded pre-trained model weights
+├── notebooks/        # Jupyter notebooks for experimentation
+├── scripts/          # Core Python source code
+├── tests/            # Automated tests
+├── .gitignore        # Files to be ignored by Git
+└── README.md         # Project documentation
