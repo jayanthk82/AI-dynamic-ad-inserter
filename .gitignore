@@ -1,0 +1,12 @@
+# Data and Models
+data/
+models/
+
+# Python specific
+__pycache__/
+*.pyc
+
+# Environment specific
+.env
+venv/
+*.DS_Store
